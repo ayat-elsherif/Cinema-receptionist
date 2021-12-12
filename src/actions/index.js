@@ -44,3 +44,14 @@ export const submitReservation =
     dispatch({ type: "SUBMIT_RES", payload: response.data });
     alert("The reservation is succesfully done!!");
   };
+
+export const deleteReservation = (seatId, seatPosition) => async (dispatch) => {
+  await Reservation.delete("/tickets", {
+    id: seatId,
+    position: seatPosition,
+  });
+  dispatch({
+    type: "DELETE_RES",
+    payload: { id: seatId, position: seatPosition },
+  });
+};

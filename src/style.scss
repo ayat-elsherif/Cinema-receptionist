@@ -56,7 +56,7 @@ a{
 .sideBar{
     background-color: #525252;
     color:#eee;
-    padding:20px;
+    padding:10px;
     a{
         color:#eee;
         font-weight: bold;
@@ -108,3 +108,11 @@ a{
 }
 
 
+.clientsInfo{
+    form{
+        width: 75%;
+        @media screen and (min-width:992px){
+            width: 25%;
+        }
+    }
+}

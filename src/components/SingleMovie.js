@@ -12,7 +12,7 @@ class SingleMovie extends React.Component {
   partiesHandling = () => {
     return this.props.movie.map((party) => {
       return (
-        <div className="col-md-2 col-sm-6 col-12" key={party.party_id}>
+        <div className="col-md-2 col-sm-6 col-12 mb-4" key={party.party_id}>
           <Link to={`/movies/${this.movieId}/parties/${party.party_id}`}>
             <Card>
               <Card.Img variant="top" src="/images/red-notice.jpg" />

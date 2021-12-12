@@ -48,7 +48,7 @@ class ReserveConfirmation extends React.Component {
   clientForm = () => {
     const { leftSeats, rightSeats } = this.props;
     return (
-      <Form className="text-center w-25 m-auto mb-5">
+      <Form className="text-center m-auto mb-5">
         <Form.Group className="mb-3" controlId="clientReservation">
           <Form.Label>Client Name</Form.Label>
           <Form.Control

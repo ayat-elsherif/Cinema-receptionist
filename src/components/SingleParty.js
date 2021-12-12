@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { showSeats } from "../actions";
+import { showSeats, deleteReservation } from "../actions";
 import ReserveConfirmation from "./ReserveConfirmation";
 
 class SingleParty extends React.Component {
@@ -91,13 +91,22 @@ class SingleParty extends React.Component {
       this.setState({ reservedRight: resRight });
     }
     if (resLeftSeat.includes(seatId)) {
-      resLeftSeat = resLeftSeat.filter((el) => el != seatId);
-      this.setState({ reservedLeft: resLeftSeat });
-      // console.log("staaates");
+      let x = window.confirm("Are u sure u want to delete this reservation?");
+      if (x == true) {
+        const position = seatId.substring(0, 4);
+        const id = seatId.substring(8, 10);
+        console.log(`{id:${id},position:${position}}`);
+        this.props.deleteReservation(id, position);
+      }
     }
     if (resRightSeat.includes(seatId)) {
-      resRightSeat = resRightSeat.filter((el) => el != seatId);
-      this.setState({ reservedRight: resRightSeat });
+      let x = window.confirm("Are u sure u want to delete this reservation?");
+      if (x == true) {
+        const position = seatId.substring(0, 5);
+        const id = seatId.substring(9, 11);
+        console.log(`{id:${id},position:${position}}`);
+        this.props.deleteReservation(id, position);
+      }
     }
   };
   render() {
@@ -144,4 +153,6 @@ const mapStatesToProps = (state) => {
   // console.log(state.seats, "state seat");
   return { seats: state.seats };
 };
-export default connect(mapStatesToProps, { showSeats })(SingleParty);
+export default connect(mapStatesToProps, { showSeats, deleteReservation })(
+  SingleParty
+);

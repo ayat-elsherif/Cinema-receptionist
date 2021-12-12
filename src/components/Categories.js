@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
+import { Navbar, Nav, Container } from "react-bootstrap";
 import { fetchCategories, showCategory } from "../actions";
 class Categories extends React.Component {
   componentDidMount = () => {
@@ -17,20 +17,34 @@ class Categories extends React.Component {
 
   categoryHandle = () => {
     return this.props.categories.map((cat) => (
-      <Link
-        to={`/categories/${cat.id}`}
-        key={cat.id}
-        className="me-3"
-        onClick={this.showThisCategory}
-      >
-        category{cat.id}
-      </Link>
+      <Nav className="">
+        <Nav.Link>
+          <Link
+            to={`/categories/${cat.id}`}
+            key={cat.id}
+            className="me-3"
+            onClick={this.showThisCategory}
+          >
+            category{cat.id}
+          </Link>
+        </Nav.Link>
+      </Nav>
     ));
   };
   render() {
     return (
       <aside className="sideBar">
-        <div className="container">{this.categoryHandle()}</div>
+        <Navbar expand="lg" variant="dark">
+          <Container>
+            <Navbar.Brand href="#home" className="d-block d-lg-none">
+              Categories
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              {this.categoryHandle()}
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
       </aside>
     );
   }
