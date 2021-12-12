@@ -6,12 +6,12 @@ import { fetchCategories, showCategory } from "../actions";
 class Categories extends React.Component {
   componentDidMount = () => {
     return this.props.fetchCategories();
+    console.log(this.props);
   };
 
   showThisCategory = () => {
     if ("paramsId" in this.props) {
       this.props.showCategory(this.props.paramsId);
-      //   console.log("i hit here");
     }
   };
 
@@ -23,7 +23,7 @@ class Categories extends React.Component {
         className="me-3"
         onClick={this.showThisCategory}
       >
-        {cat.name}
+        category{cat.id}
       </Link>
     ));
   };

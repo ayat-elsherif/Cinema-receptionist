@@ -20,6 +20,13 @@ class SingleCategory extends React.Component {
       <React.Fragment>
         <Categories paramsId={this.props.match.params.id} />
         <div className="container mt-5">
+          <h2 className="text-center mb-5 main-title">
+            {/* Category
+            {this.props.movies[0].category_id
+              ? this.props.movies[0].category_id
+              : null} */}
+          </h2>
+
           <div className="row">{this.moviesHandling()}</div>
         </div>
       </React.Fragment>

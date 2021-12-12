@@ -14,13 +14,13 @@ class MoviesList extends React.Component {
   render() {
     return (
       <div className="container mt-5">
+        <h2 className="text-center mb-5 main-title">All Movies</h2>
         <div className="row">{this.moviesHandling()}</div>
       </div>
     );
   }
 }
 const mapStatesToProps = (state) => {
-  // console.log(state.ticketing, "movies array");
   return { movies: Object.values(state.ticketing) };
 };
 export default connect(mapStatesToProps, { fetchMovies })(MoviesList);
