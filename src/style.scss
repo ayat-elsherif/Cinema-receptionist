@@ -1,0 +1,57 @@
+body{
+    background-color: #212121 !important;
+    
+}
+.sideBar{
+    background-color: #525252;
+    color:#eee;
+    padding:20px;
+    a{
+        color:#eee;
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}
+.seatsList{
+    h2{
+        background-color: #525252;
+    font-size: calc(1.5vw + 16px);
+    color: #eee;
+    }
+    .allSeats{
+        margin-top: 40px;
+        display: flex;
+        padding:0px;
+        color: #eee !important;
+        @media screen and (min-width:992px) {
+            padding:50px;
+        }
+        .leftSeats,.rightSeats{
+            border:1px solid #eee;
+            border-radius: 10px;
+            padding:10px;
+            display: flex;
+            flex-wrap: wrap;
+            margin:20px;
+            justify-content: center;
+            
+            @media screen and (min-width:992px) {
+                padding:30px;
+            }
+            .seats{
+                width: 35px;
+                cursor: pointer;
+                margin-bottom: 10px;
+                background-color: hotpink;
+                color: antiquewhite;
+                border-radius: 10px;
+                padding: 10px 0px;
+                margin: 10px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
