@@ -47,11 +47,15 @@ export const submitReservation =
 
 export const deleteReservation = (seatId, seatPosition) => async (dispatch) => {
   await Reservation.delete("/tickets", {
-    id: seatId,
-    position: seatPosition,
+    data: {
+      // data is always required in delete request "axios"
+      id: seatId,
+      position: seatPosition,
+    },
   });
   dispatch({
     type: "DELETE_RES",
     payload: { id: seatId, position: seatPosition },
   });
+  window.location.reload();
 };

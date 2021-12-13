@@ -33,7 +33,7 @@ class ReserveConfirmation extends React.Component {
       i = i.substring(8, 10);
       seatLeft = [...seatLeft, { id: i, position: "left" }];
     }
-    console.log(seatLeft, "in seats left");
+    // console.log(seatLeft, "in seats left");
     return seatLeft;
   };
   cleanArrRight = () => {
@@ -42,7 +42,7 @@ class ReserveConfirmation extends React.Component {
       i = i.substring(9, 11);
       seatRight = [...seatRight, { id: i, position: "right" }];
     }
-    console.log(seatRight, "in seats right");
+    // console.log(seatRight, "in seats right");
     return seatRight;
   };
   clientForm = () => {

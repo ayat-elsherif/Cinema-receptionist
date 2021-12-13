@@ -25,7 +25,7 @@ class SingleParty extends React.Component {
         i = `leftSeat${i}`;
         seatLeft = [...seatLeft, i];
       }
-      console.log(seatLeft, "seatLeft Prefix");
+      // console.log(seatLeft, "seatLeft Prefix");
       return seatLeft;
     }
   };
@@ -37,7 +37,7 @@ class SingleParty extends React.Component {
         i = `rightSeat${i}`;
         seatRight = [...seatRight, i];
       }
-      console.log(seatRight, "seatRight Prefix");
+      // console.log(seatRight, "seatRight Prefix");
       return seatRight;
     }
   };
@@ -106,16 +106,11 @@ class SingleParty extends React.Component {
         const id = seatId.substring(9, 11);
         console.log(`{id:${id},position:${position}}`);
         this.props.deleteReservation(id, position);
+        // window.location.reload();
       }
     }
   };
   render() {
-    console.log(
-      this.state.reservedLeft,
-      "left",
-      this.state.reservedRight,
-      "right"
-    );
     const { seats } = this.props;
     // console.log(seats.movie_name, seats.time, "i'm in party");
     return (
