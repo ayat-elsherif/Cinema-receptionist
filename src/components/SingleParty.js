@@ -91,19 +91,31 @@ class SingleParty extends React.Component {
       this.setState({ reservedRight: resRight });
     }
     if (resLeftSeat.includes(seatId)) {
-      let x = window.confirm("Are u sure u want to delete this reservation?");
+      const position = seatId.substring(0, 4);
+      const id = seatId.substring(8, 10);
+      let x = window.confirm(
+        "Are u sure u want to delete seat no.'" +
+          id +
+          "',  at the '" +
+          position +
+          "' side?"
+      );
       if (x == true) {
-        const position = seatId.substring(0, 4);
-        const id = seatId.substring(8, 10);
         console.log(`{id:${id},position:${position}}`);
         this.props.deleteReservation(id, position);
       }
     }
     if (resRightSeat.includes(seatId)) {
-      let x = window.confirm("Are u sure u want to delete this reservation?");
+      const position = seatId.substring(0, 5);
+      const id = seatId.substring(9, 11);
+      let x = window.confirm(
+        "Are u sure u want to delete seat no.'" +
+          id +
+          "',  at the '" +
+          position +
+          "' side?"
+      );
       if (x == true) {
-        const position = seatId.substring(0, 5);
-        const id = seatId.substring(9, 11);
         console.log(`{id:${id},position:${position}}`);
         this.props.deleteReservation(id, position);
         // window.location.reload();
